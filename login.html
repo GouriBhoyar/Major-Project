@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="log.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Sign In</h2>
+        <p class="account-text">Don't have an account? <a href="create_account.html">Create Account</a></p>
+        
+        <form id="login-form">
+            <div class="input-group">
+                <label for="email">Gmail:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your Gmail" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                <a href="forgot_password.html" class="forgot-password">Forgot Password?</a>
+            </div>
+            
+            <div class="input-group">
+                <button type="submit" class="login-submit">Sign In</button>
+            </div>
+            <div class="or-separator">
+                <span>OR</span>
+            </div>
+            <div class="google-signup">
+                <button type="button" class="google-btn">Sign in with Google</button>
+            </div>
+        </form>
+    </div>
+    
+    <script>
+        // JavaScript for handling the login form
+        const loginForm = document.getElementById('login-form');
+
+        loginForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Retrieve form values
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Check credentials
+            if (email === 'admin12@gmail.com' && password === 'Radhe2003') {
+                sessionStorage.setItem('isLoggedIn', 'true');
+                sessionStorage.setItem('userType', 'admin');
+                window.location.href = 'admin.html'; // Redirect to admin dashboard
+            } else if (email && password) {
+                sessionStorage.setItem('isLoggedIn', 'true');
+                sessionStorage.setItem('userType', 'customer');
+                window.location.href = 'index.html'; // Redirect to customer homepage
+            } else {
+                alert('Invalid credentials. Please try again.');
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+
+

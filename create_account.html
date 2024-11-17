@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <link rel="stylesheet" href="create_account.css">
+</head>
+<body>
+    <div class="create-account-container">
+        <h2>Create Account</h2>
+        <form id="create-account-form">
+            <div class="input-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="input-group">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+            <div class="input-group">
+                <label for="email">Gmail:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your Gmail" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Create a password" required>
+            </div>
+            <div class="input-group">
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
+            </div>
+            <div class="input-group">
+                <button type="submit" class="create-account-submit">Create Account</button>
+            </div>
+            <p class="password-message" id="password-message"></p> <!-- Message container for password validation -->
+        </form>
+    </div>
+    
+    <script>
+        // Password validation function
+        function validatePassword(password) {
+            const passwordPattern = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
+            return passwordPattern.test(password);
+        }
+
+        // Form submission handling
+        document.getElementById('create-account-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+            const passwordMessage = document.getElementById('password-message');
+
+            // Validate password against criteria
+            if (!validatePassword(password)) {
+                passwordMessage.textContent = "Password must be at least 8 characters, include at least one uppercase letter, one digit, and one special character.";
+                passwordMessage.style.color = "red";
+                return;
+            } else if (password !== confirmPassword) {
+                passwordMessage.textContent = "Passwords do not match.";
+                passwordMessage.style.color = "red";
+                return;
+            } else {
+                passwordMessage.textContent = "";
+            }
+
+            // Assuming validation passes, redirect to login.html
+            window.location.href = 'login.html?signup=success';
+        });
+    </script>
+</body>
+</html>

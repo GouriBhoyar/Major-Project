@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+
+
+<!--<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -19,9 +21,7 @@
                 <li class="dropdown">
                     <a href="#">Settings</a>
                     <ul class="dropdown-content">
-                        
                         <li><a href="profile.html">Profile</a></li>
-
                     </ul>
                 </li>
                 <li><a href="#">Products</a></li>
@@ -29,7 +29,7 @@
                     <a href="#">More</a>
                     <ul class="dropdown-content">
                         <li><a href="#">Status</a></li>
-                        <li><a href="#" id="logout-btn">Logout</a></li> <!-- Updated Logout Link -->
+                        <li><a href="#" id="logout-btn">Logout</a></li>
                     </ul>
                 </li>
             </ul>
@@ -64,54 +64,243 @@
         <p>&copy; 2024 Autogenics Car Detailing Studio. All Rights Reserved.</p>
     </footer>
 
-<!--<script>
-        // Logout functionality
-        document.getElementById('logout-btn').addEventListener('click', function(event) {
-            event.preventDefault(); // Prevent default link behavior
+    <script>
+        // Function to handle dropdown toggle
+        document.addEventListener('DOMContentLoaded', () => {
+            const dropdowns = document.querySelectorAll('.dropdown');
+            
+            dropdowns.forEach(dropdown => {
+                const link = dropdown.querySelector('a');
+                const dropdownContent = dropdown.querySelector('.dropdown-content');
 
-            // Clear session storage to simulate logout
-            sessionStorage.removeItem('isLoggedIn');
-            sessionStorage.removeItem('userType');
+                link.addEventListener('click', (event) => {
+                    event.preventDefault(); // Prevent default link behavior
 
-            // Redirect to login page
-            window.location.href = 'login.html';
+                    // Close any other open dropdowns
+                    document.querySelectorAll('.dropdown-content').forEach(content => {
+                        if (content !== dropdownContent) {
+                            content.classList.remove('show');
+                        }
+                    });
+
+                    // Toggle the visibility of the clicked dropdown
+                    dropdownContent.classList.toggle('show');
+                });
+            });
+
+            // Close the dropdown if the user clicks outside of it
+            window.addEventListener('click', (event) => {
+                if (!event.target.matches('.dropdown a')) {
+                    document.querySelectorAll('.dropdown-content').forEach(content => {
+                        content.classList.remove('show');
+                    });
+                }
+            });
+
+            // Logout functionality
+            const logoutBtn = document.getElementById('logout-btn');
+            logoutBtn.addEventListener('click', (event) => {
+                event.preventDefault();
+
+                // Clear user session or authentication token
+                alert("You have been logged out successfully!");
+
+                // Redirect to the login page
+                window.location.href = "login.html";
+            });
         });
     </script>
 </body>
-</html>-->
+</html> -->
 
-<script>
-    // Function to handle dropdown toggle
-    document.addEventListener('DOMContentLoaded', () => {
-        const dropdowns = document.querySelectorAll('.dropdown');
-        
-        dropdowns.forEach(dropdown => {
-            const link = dropdown.querySelector('a');
-            const dropdownContent = dropdown.querySelector('.dropdown-content');
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autogenics Car Detailing Studio</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Styling for the products section */
+        .products-container {
+            display: none; /* Initially hidden */
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
 
-            link.addEventListener('click', (event) => {
-                event.preventDefault(); // Prevent default link behavior
+        .products-container.show {
+            display: flex; /* Show products dynamically */
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
 
-                // Close any other open dropdowns
-                document.querySelectorAll('.dropdown-content').forEach(content => {
-                    if (content !== dropdownContent) {
-                        content.classList.remove('show');
-                    }
+        .product-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            width: 250px;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-card img {
+            width: 150px;
+            height: 150px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
+        .product-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .product-card p {
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .product-card button {
+            background-color: #161615;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 0.7rem 1rem;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .product-card button:hover {
+            background-color: #f0efea;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="logo copy.png" alt="Autogenics Logo" class="logo">
+            <h1>Autogenics</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li class="dropdown">
+                    <a href="#">Settings</a>
+                    <ul class="dropdown-content">
+                        <li><a href="profile.html">Profile</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" id="products-tab">Products</a></li>
+                <li class="dropdown">
+                    <a href="#">More</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">Status</a></li>
+                        <li><a href="#" id="logout-btn">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="background-text">Autogenics</div>
+        <section class="info-section">
+            <div class="info-box">
+                <h2>About the Studio</h2>
+                <p>
+                    Welcome to Autogenics, your premier car detailing studio. We specialize in providing top-notch services to make your car look brand new. Our services include car wash, dent removal, painting, interior cleaning, and much more. With our skilled technicians and state-of-the-art equipment, your car will always be in good hands.
+                </p>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <div class="products-container" id="products-container">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <img src="car-perfume.jpg" alt="Car Perfume">
+                <h3>Car Perfume</h3>
+                <p>Freshen up your car with our premium car perfumes.</p>
+                <button>Buy Now</button>
+            </div>
+            <!-- Product 2 -->
+            <div class="product-card">
+                <img src="car-gel.jpg" alt="Car Gel">
+                <h3>Car Gel</h3>
+                <p>Enhance your car's shine with our car gel polish.</p>
+                <button>Buy Now</button>
+            </div>
+            <!-- Product 3 -->
+            <div class="product-card">
+                <img src="engine-oil.jpg" alt="Engine Oil">
+                <h3>Engine Oil</h3>
+                <p>High-quality engine oil for optimal car performance.</p>
+                <button>Buy Now</button>
+            </div>
+            <!-- Product 4 -->
+            <div class="product-card">
+                <img src="dust-spray.jpg" alt="Dust Protection Spray">
+                <h3>Dust Protection Spray</h3>
+                <p>Keep your car dust-free with our protection spray.</p>
+                <button>Buy Now</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Autogenics Car Detailing Studio. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Handle dropdown toggle
+            const dropdowns = document.querySelectorAll('.dropdown');
+            dropdowns.forEach(dropdown => {
+                const link = dropdown.querySelector('a');
+                const dropdownContent = dropdown.querySelector('.dropdown-content');
+
+                link.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    document.querySelectorAll('.dropdown-content').forEach(content => {
+                        if (content !== dropdownContent) {
+                            content.classList.remove('show');
+                        }
+                    });
+                    dropdownContent.classList.toggle('show');
                 });
+            });
 
-                // Toggle the visibility of the clicked dropdown
-                dropdownContent.classList.toggle('show');
+            // Logout functionality
+            const logoutBtn = document.getElementById('logout-btn');
+            logoutBtn.addEventListener('click', (event) => {
+                event.preventDefault();
+                alert("You have been logged out successfully!");
+                window.location.href = "login.html";
+            });
+
+            // Show products when "Products" tab is clicked
+            const productsTab = document.getElementById('products-tab');
+            const productsContainer = document.getElementById('products-container');
+
+            productsTab.addEventListener('click', (event) => {
+                event.preventDefault();
+
+                // Toggle product display
+                productsContainer.classList.toggle('show');
             });
         });
+    </script>
+</body>
+</html>
 
-        // Close the dropdown if the user clicks outside of it
-        window.addEventListener('click', (event) => {
-            if (!event.target.matches('.dropdown a')) {
-                document.querySelectorAll('.dropdown-content').forEach(content => {
-                    content.classList.remove('show');
-                });
-            }
-        });
-    });
-</script>
 

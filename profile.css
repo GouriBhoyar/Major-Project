@@ -100,3 +100,25 @@ body {
 .back-link:hover {
     text-decoration: underline;
 }
+
+
+    .editable {
+        border: none;
+        background: transparent;
+        text-align: center;
+        font-size: 1rem;
+        width: 100%;
+        display: block;
+        margin: 0.5rem 0;
+    }
+
+    .editable:focus {
+        outline: none;
+    }
+
+    .editing {
+        border-bottom: 1px solid #333;
+        background: #f0f0f0;
+    }
+
+

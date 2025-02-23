@@ -1,5 +1,5 @@
 
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -23,7 +23,7 @@
                         <li><a href="profile.html">Profile</a></li>
                     </ul>
                 </li>
-                <li><a href="#">Products</a></li>
+                <li><a href="Products.html">Products</a></li>
                 <li class="dropdown">
                     <a href="#">More</a>
                     <ul class="dropdown-content">
@@ -110,7 +110,113 @@
         });
     </script>
 </body>
-</html> 
+</html>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autogenics Car Detailing Studio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="logo copy.png" alt="Autogenics Logo" class="logo">
+            <h1>Autogenics</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li class="dropdown">
+                    <a href="#">Settings</a>
+                    <ul class="dropdown-content">
+                        <li><a href="profile.html">Profile</a></li>
+                    </ul>
+                </li>
+                <li><a href="Products.html">Products</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li class="dropdown">
+                    <a href="#">More</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">Status</a></li>
+                        <li><a href="#" id="logout-btn">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="background-text">Autogenics</div>
+
+        <!-- About Section -->
+        <section id="about" class="scroll-section">
+            <h2>About the Studio</h2>
+            <p>
+                Welcome to Autogenics, your premier car detailing studio. We specialize in making your car look brand new with expert services like car wash, ceramic coatings, paint protection films, and more.
+            </p>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="scroll-section">
+            <h2>Our Services</h2>
+            <p>
+                From ceramic and graphene coatings to interior cleaning and paint protection films, we offer top-notch car detailing services.
+            </p>
+            <a href="services.html" class="learn-more-btn">Explore Services</a>
+        </section>
+
+        <!-- Feedback Section -->
+        <section id="feedback" class="scroll-section">
+            <h2>What Our Customers Say</h2>
+            <div class="feedback-container">
+                <div class="feedback-card">
+                    <p>"Autogenics transformed my car! The ceramic coating looks stunning and keeps my car shining."</p>
+                    <h4>- Alex Johnson</h4>
+                </div>
+                <div class="feedback-card">
+                    <p>"Great service! The interior cleaning left my car feeling brand new again."</p>
+                    <h4>- Priya Sharma</h4>
+                </div>
+                <div class="feedback-card">
+                    <p>"The paint protection film is a game-changer. My car stays scratch-free even on long drives!"</p>
+                    <h4>- Michael Brown</h4>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Media Section -->
+        <section id="social-media" class="scroll-section">
+            <h2>Follow Us</h2>
+            <div class="social-icons">
+                <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://wa.me/1234567890" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Autogenics Car Detailing Studio. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Logout functionality
+        document.getElementById('logout-btn').addEventListener('click', (event) => {
+            event.preventDefault();
+            alert("You have been logged out successfully!");
+            window.location.href = "login.html";
+        });
+    </script>
+</body>
+</html>
+
+
+
 
 
 

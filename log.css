@@ -1,11 +1,11 @@
-/* Basic Reset */
-* {
+
+/** {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body Styling */
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f2f5;
@@ -15,7 +15,7 @@ body {
     height: 100vh;
 }
 
-/* Styling for the Login Form */
+
 .login-container {
     width: 100%;
     max-width: 400px;
@@ -27,14 +27,14 @@ body {
     text-align: center;
 }
 
-/* Heading Styling */
+
 .login-container h2 {
     margin-bottom: 20px;
     font-size: 24px;
     color: #f6eeee;
 }
 
-/* Input Group Styling */
+
 .input-group {
     margin-bottom: 15px;
     text-align: left;
@@ -55,7 +55,7 @@ body {
     font-size: 14px;
 }
 
-/* Sign In Button Styling */
+
 .login-submit {
     width: 100%;
     padding: 12px;
@@ -73,7 +73,7 @@ body {
     background-color: #0056b3;
 }
 
-/* OR Separator Styling */
+
 .or-separator {
     display: flex;
     align-items: center;
@@ -96,7 +96,7 @@ body {
     margin: 0 10px;
 }
 
-/* Google Signup Button */
+
 .google-btn {
     width: 100%;
     padding: 10px;
@@ -112,7 +112,156 @@ body {
     background-color: #c33d2f;
 }
 
-/* Responsive Styling */
+
+@media (max-width: 480px) {
+    .login-container {
+        width: 90%;
+        padding: 20px;
+    }
+} 
+*/
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Login Container */
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Heading */
+.login-container h2 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+/* Account Text */
+.account-text {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.account-text a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.account-text a:hover {
+    text-decoration: underline;
+}
+
+/* Input Fields */
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Forgot Password */
+.forgot-password {
+    display: block;
+    text-align: right;
+    font-size: 12px;
+    margin-top: 5px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+/* Sign In Button */
+.login-submit {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.login-submit:hover {
+    background-color: #0056b3;
+}
+
+/* OR Separator */
+.or-separator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.or-separator span {
+    background: white;
+    padding: 0 10px;
+    color: #999;
+}
+
+.or-separator::before,
+.or-separator::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #ccc;
+    margin: 0 10px;
+}
+
+/* Google Sign-In Button */
+.google-btn {
+    width: 100%;
+    padding: 12px;
+    background: #db4437;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.google-btn:hover {
+    background: #c33d2f;
+}
+
+/* Responsive Design */
 @media (max-width: 480px) {
     .login-container {
         width: 90%;

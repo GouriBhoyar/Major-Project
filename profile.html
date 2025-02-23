@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,13 +12,74 @@
     </div>
     <div class="profile-container">
         <div class="profile-card">
-            <img src="profile-placeholder.jpg" alt="Profile Picture" class="profile-pic"> <!-- Replace with actual profile picture -->
+            <img src="profileimage.jpeg" alt="Profile Picture" class="profile-pic"> 
             <div class="profile-info">
-                <h2>John Doe</h2> <!-- Replace with dynamic data -->
-                <p><strong>Date of Birth:</strong> 01/01/1990</p> <!-- Replace with dynamic data -->
-                <p><strong>Email:</strong> johndoe@gmail.com</p> <!-- Replace with dynamic data -->
+                <h2>John Doe</h2> 
+                <p><strong>Date of Birth:</strong> 01/01/1990</p> 
+                <p><strong>Email:</strong> johndoe@gmail.com</p> 
             </div>
             <button class="edit-profile-btn">Edit Profile</button>
+        </div>
+        <a href="index.html" class="back-link">Back to Home</a>
+    </div>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+    <link rel="stylesheet" href="profile.css">
+    <script>
+        function toggleEditMode() {
+            const inputs = document.querySelectorAll(".editable");
+            const button = document.getElementById("edit-btn");
+            
+            if (button.innerText === "Edit Profile") {
+                inputs.forEach(input => {
+                    input.removeAttribute("readonly");
+                    input.classList.add("editing");
+                });
+                button.innerText = "Save";
+            } else {
+                const profileData = {};
+                inputs.forEach(input => {
+                    input.setAttribute("readonly", "true");
+                    input.classList.remove("editing");
+                    profileData[input.name] = input.value;
+                });
+                localStorage.setItem("profileData", JSON.stringify(profileData));
+                button.innerText = "Edit Profile";
+            }
+        }
+
+        function loadProfileData() {
+            const savedData = localStorage.getItem("profileData");
+            if (savedData) {
+                const profileData = JSON.parse(savedData);
+                document.querySelector("input[name='name']").value = profileData.name || "";
+                document.querySelector("input[name='dob']").value = profileData.dob || "";
+                document.querySelector("input[name='email']").value = profileData.email || "";
+            }
+        }
+
+        window.onload = loadProfileData;
+    </script>
+</head>
+<body>
+    <div class="profile-header">
+        <h1>My Profile</h1>
+    </div>
+    <div class="profile-container">
+        <div class="profile-card">
+            <img src="profileimage.jpeg" alt="Profile Picture" class="profile-pic"> 
+            <div class="profile-info">
+                <input type="text" class="editable" name="name" value="John Doe" readonly>
+                <input type="text" class="editable" name="dob" value="01/01/1990" readonly>
+                <input type="email" class="editable" name="email" value="johndoe@gmail.com" readonly>
+            </div>
+            <button id="edit-btn" class="edit-profile-btn" onclick="toggleEditMode()">Edit Profile</button>
         </div>
         <a href="index.html" class="back-link">Back to Home</a>
     </div>

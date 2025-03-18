@@ -1,0 +1,134 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+/* Header Styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: rgba(51, 51, 51, 0.9);
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Logo Container */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Added gap for spacing */
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+}
+
+/* Navigation */
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Added gap for spacing */
+}
+
+nav ul li {
+    position: relative;
+}
+
+/* Navigation Link Styling */
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 4px;
+}
+
+/* Hover Effect for Navigation Links */
+nav ul li a:hover {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+/* Main Section Styling */
+main {
+    padding: 40px 20px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* Graphene & Ceramic Coating Section */
+#graphene-ceramic {
+    padding: 70px 20px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    margin-top: 70px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-size: 1.5rem; /* Increased font size */
+}
+
+/* Content Container */
+.content-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Adjust size of video */
+.media-container {
+    text-align: center; /* Center the media content */
+}
+
+.service-video {
+    display: flex; /* Use flexbox to align content side by side */
+    justify-content: flex-end; /* Align content to the right */
+    width: 30%; /* Set the width of the video to 60% of its container */
+    max-width: 500px; /* Max width for larger screens */
+    height: auto; /* Maintain aspect ratio */
+
+}
+
+
+/* Service Image */
+.service-image {
+    width: 80%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+
+/* Contact Info Styling */
+.contact-info {
+    margin-top: 30px;
+    font-size: 1.5rem;  /* Increased font size */
+    font-weight: bolder; /* Make it bolder */
+    color: white;  /* Set text color to white */
+}
+
+
+
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    background-color: rgba(51, 51, 51, 0.9);
+    color: #fff;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

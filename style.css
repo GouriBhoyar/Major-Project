@@ -284,46 +284,219 @@ footer {
 }
 
 /* Feedback Section */
+#feedback h2{
+    color: white; 
+}
 .feedback-container {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
+    flex-wrap: wrap; /* Wraps the feedback cards to the next line if there isn't enough space */
+    gap: 20px; /* Space between the feedback cards */
     margin-top: 20px;
 }
 
+/* Feedback Card Styling */
 .feedback-card {
-    background-color: #fff;
+    background-color: #f9f6f6;
     padding: 20px;
     border-radius: 10px;
-    width: 300px;
+    width: 300px; /* Fixed width for each card */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center; /* Center the text and content inside the card */
 }
 
+/* Feedback Image Styling */
+.feedback-image {
+    width: 100px; /* Size of the image */
+    height: 100px; /* Ensure it’s a square */
+    border-radius: 50%; /* Make it circular */
+    object-fit: cover; /* Ensures the image doesn't get distorted */
+    margin-bottom: 15px; /* Space between image and text */
+}
+
+/* Feedback Text Styling */
 .feedback-card p {
     font-size: 1rem;
-    color: #666;
+    color: #0a0a0a;
+    margin-bottom: 10px; /* Space between text and name */
 }
 
 .feedback-card h4 {
     margin-top: 10px;
     color: #333;
+    font-weight: bold;
 }
 
-/* Social Media Icons */
-.social-icons {
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two items per row */
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+.service-box {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.service-box img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.service-box p {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.service-box:hover {
+    transform: scale(1.05);
+}
+
+/* Center the last item in a row */
+.services-grid .service-box:nth-child(5) {
+    grid-column: span 2;
+    width: 50%;
+    margin: auto;
+}
+
+/* Know About Our Founder Section */
+#founder h2 {
+    color: white; /* Change the color of the heading to white */
+}
+#founder {
+    color: #f0efea;
+    padding: 60px 20px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(249, 248, 248, 0.1);
+    margin-top: 70px;
+}
+
+.founder-container {
     display: flex;
     justify-content: center;
-    gap: 20px;
-    margin-top: 15px;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap; /* Ensures content is responsive */
 }
 
-.social-icons a {
+.founder-image img {
+    width: 250px; /* Adjust image size */
+    height: 250px;
+    border-radius: 50%; /* Circular image */
+    object-fit: cover;
+}
+
+.founder-bio {
+    max-width: 600px;
+    text-align: left;
+    font-size: 1rem;
+    color: #f5f2f2;
+}
+
+.founder-bio h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #f8f4f4;
+}
+
+.founder-bio p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #f6f1f1;
+    margin-bottom: 15px;
+}
+
+/* Our Work Section */
+#our-work {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+#our-work h2 {
+    color: #f9f6f6;
+    margin-bottom: 30px;
     font-size: 2rem;
-    color: #161615;
-    transition: 0.3s;
 }
 
-.social-icons a:hover {
-    color: #fda085;
+.videos-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
 }
+
+.video-card {
+    width: 30%;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+
+.video-card video {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.video-card p {
+    margin-top: 10px;
+    color: #333;
+    font-size: 1rem;
+}
+
+/* Follow Us Section */
+#follow-us {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+#follow-us h2 {
+    font-size: 2rem;
+    color: #f9f2f2;
+    margin-bottom: 30px;
+}
+
+.social-media-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.social-media-item {
+    width: 22%;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    text-align: center;
+}
+
+.social-media-item img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+.social-media-item p {
+    font-size: 1rem;
+    color: #333;
+}
+
+

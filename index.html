@@ -1,116 +1,3 @@
-
-<!--<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Autogenics Car Detailing Studio</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <div class="logo-container">
-            <img src="logo copy.png" alt="Autogenics Logo" class="logo">
-            <h1>Autogenics</h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li class="dropdown">
-                    <a href="#">Settings</a>
-                    <ul class="dropdown-content">
-                        <li><a href="profile.html">Profile</a></li>
-                    </ul>
-                </li>
-                <li><a href="Products.html">Products</a></li>
-                <li class="dropdown">
-                    <a href="#">More</a>
-                    <ul class="dropdown-content">
-                        <li><a href="#">Status</a></li>
-                        <li><a href="#" id="logout-btn">Logout</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <div class="background-text">Autogenics</div>
-        <section class="info-section">
-            <div class="info-box">
-                <h2>About the Studio</h2>
-                <p>
-                    Welcome to Autogenics, your premier car detailing studio. We specialize in providing top-notch services to make your car look brand new. Our services include car wash, dent removal, painting, interior cleaning, and much more. With our skilled technicians and state-of-the-art equipment, your car will always be in good hands.
-                </p>
-            </div>
-            <div class="info-box">
-                <h2>Our Work</h2>
-                <p>
-                    At Autogenics, we pride ourselves on delivering high-quality results. Our team uses the latest techniques and materials to ensure that your car's exterior and interior are in perfect condition. Take a look at some of our past projects to see the transformations for yourself.
-                </p>
-            </div>
-            <div class="info-box">
-                <h2>Our Dealers</h2>
-                <p>
-                    We partner with some of the best dealers in the industry to provide top-quality accessories and replacement parts for your vehicle. Our trusted dealers help us ensure that every service we offer meets the highest standards of quality and reliability.
-                </p>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2024 Autogenics Car Detailing Studio. All Rights Reserved.</p>
-    </footer>
-
-    <script>
-        // Function to handle dropdown toggle
-        document.addEventListener('DOMContentLoaded', () => {
-            const dropdowns = document.querySelectorAll('.dropdown');
-            
-            dropdowns.forEach(dropdown => {
-                const link = dropdown.querySelector('a');
-                const dropdownContent = dropdown.querySelector('.dropdown-content');
-
-                link.addEventListener('click', (event) => {
-                    event.preventDefault(); // Prevent default link behavior
-
-                    // Close any other open dropdowns
-                    document.querySelectorAll('.dropdown-content').forEach(content => {
-                        if (content !== dropdownContent) {
-                            content.classList.remove('show');
-                        }
-                    });
-
-                    // Toggle the visibility of the clicked dropdown
-                    dropdownContent.classList.toggle('show');
-                });
-            });
-
-            // Close the dropdown if the user clicks outside of it
-            window.addEventListener('click', (event) => {
-                if (!event.target.matches('.dropdown a')) {
-                    document.querySelectorAll('.dropdown-content').forEach(content => {
-                        content.classList.remove('show');
-                    });
-                }
-            });
-
-            // Logout functionality
-            const logoutBtn = document.getElementById('logout-btn');
-            logoutBtn.addEventListener('click', (event) => {
-                event.preventDefault();
-
-                // Clear user session or authentication token
-                alert("You have been logged out successfully!");
-
-                // Redirect to the login page
-                window.location.href = "login.html";
-            });
-        });
-    </script>
-</body>
-</html>-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -150,54 +37,145 @@
     </header>
 
     <main>
-        <div class="background-text">Autogenics</div>
-
-        <!-- About Section -->
-        <section id="about" class="scroll-section">
-            <h2>About the Studio</h2>
-            <p>
-                Welcome to Autogenics, your premier car detailing studio. We specialize in making your car look brand new with expert services like car wash, ceramic coatings, paint protection films, and more.
-            </p>
+        <!--About Section-->
+        <section id="about" class="scroll-section about-section" style="background: url('aboutus.png') no-repeat center center/cover;">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About the Studio</h2>
+                    <p>
+                        Welcome to <strong>Autogenics</strong>, your premier destination for professional car detailing services.
+                        With a passion for excellence and a commitment to quality, we specialize in transforming your vehicle 
+                        into a masterpiece of shine and protection. Whether you need a meticulous interior cleaning, 
+                        high-performance ceramic coatings, or advanced paint protection solutions, we have got you covered.
+                    </p>
+                    <p>
+                        At Autogenics, we use state-of-the-art tools and top-quality products to ensure your car receives the 
+                        best treatment. Our team of experienced professionals is dedicated to enhancing the longevity and beauty of your 
+                        vehicle while providing unparalleled customer satisfaction.
+                    </p>
+                    <h3>Our Services Include:</h3>
+                    <div class="services-grid">
+                        <div class="service-box">
+                            <a href="Carwash.html">
+                                <img src="car-wash.jpg" alt="Car Wash and Detailing">
+                            </a>
+                            <p>Professional Car Wash & Detailing</p>
+                        </div>
+                        <div class="service-box">
+                            <a href="Gaphene.html">
+                                <img src="Grapheneand Cer.png" alt="Graphene & Ceramic Coatings">
+                            </a>
+                            <p>Graphene & Ceramic Coatings</p>
+                        </div>
+                        <div class="service-box">
+                            <a href="ppf.html">
+                            <img src="PaintProtection.png" alt="Paint Protection Films">
+                        </a>
+                            <p>Paint Protection Films (PPF)</p>
+                        </div>
+                        <div class="service-box">
+                            <a href="interior.html">
+                            <img src="interior-cleaning.jpeg" alt="Interior & Exterior Restoration">
+                            </a>
+                            <p>Interior Restoration</p>
+                        </div>
+                        <div class="service-box">
+                            <a href="Headlight.html">
+                            <img src="Headlight.png" alt="Headlight Restoration">
+                            </a>
+                            <p>Headlight Restoration</p>
+                        </div>
+                    </div>
+            </div>
         </section>
-
-        <!-- Services Section -->
-        <section id="services" class="scroll-section">
-            <h2>Our Services</h2>
-            <p>
-                From ceramic and graphene coatings to interior cleaning and paint protection films, we offer top-notch car detailing services.
-            </p>
-            <a href="services.html" class="learn-more-btn">Explore Services</a>
-        </section>
-
         <!-- Feedback Section -->
-        <section id="feedback" class="scroll-section">
-            <h2>What Our Customers Say</h2>
-            <div class="feedback-container">
-                <div class="feedback-card">
-                    <p>"Autogenics transformed my car! The ceramic coating looks stunning and keeps my car shining."</p>
-                    <h4>- Alex Johnson</h4>
-                </div>
-                <div class="feedback-card">
-                    <p>"Great service! The interior cleaning left my car feeling brand new again."</p>
-                    <h4>- Priya Sharma</h4>
-                </div>
-                <div class="feedback-card">
-                    <p>"The paint protection film is a game-changer. My car stays scratch-free even on long drives!"</p>
-                    <h4>- Michael Brown</h4>
-                </div>
-            </div>
-        </section>
+<section id="feedback" class="scroll-section feedback section" style="background: url('blue.png') no-repeat center center/cover;">
+    <h2>What Our Customers Say?</h2>
+    <div class="feedback-container">
+        <div class="feedback-card">
+            <img src="Customer1.png" alt="Akash Dubey" class="feedback-image">
+            <p>"Autogenics transformed my car! The ceramic coating looks stunning and keeps my car shining."</p>
+            <h4>- Akash Dubey</h4>
+        </div>
+        <div class="feedback-card">
+            <img src="Customer2.png" alt="Priya Sharma" class="feedback-image">
+            <p>"Great service! The interior cleaning left my car feeling brand new again."</p>
+            <h4>- Priya Sharma</h4>
+        </div>
+        <div class="feedback-card">
+            <img src="Customer3.png" alt="Mahesh Joshi="feedback-image">
+            <p>"The paint protection film is a game-changer. My car stays scratch-free even on long drives!"</p>
+            <h4>- Mahesh Joshi</h4>
+        </div>
+    </div>
+</section>
 
-        <!-- Social Media Section -->
-        <section id="social-media" class="scroll-section">
-            <h2>Follow Us</h2>
-            <div class="social-icons">
-                <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="https://wa.me/1234567890" target="_blank"><i class="fab fa-whatsapp"></i></a>
-            </div>
-        </section>
+<!-- Know About Our Founder Section -->
+<section id="founder" class="scroll-section founder section" style="background: url('blue.png') no-repeat center center/cover;">
+    <h2>Know About Our Founder</h2>
+    <div class="founder-container">
+        <div class="founder-image">
+            <img src="Founder.png" alt="Founder Image">
+        </div>
+        <div class="founder-bio">
+            <h3>Abhishek Surve</h3>
+            <p>
+                Abhishek Surve is the visionary behind Autogenics Car Detailing Studio. With over 5 years of experience in the automotive care industry, John has built Autogenics from the ground up, driven by a passion for excellence and a commitment to providing the highest quality services to customers. His dedication to innovation and quality has set Autogenics apart as a leader in the car detailing space.
+            </p>
+            <p>
+                Under Abhishek's leadership, Autogenics has expanded its services and built a loyal customer base, continuously improving and introducing cutting-edge techniques such as Graphene and Ceramic Coatings, Paint Protection Films, and more.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Our Work Section -->
+<section id="our-work" class="scroll-section video section" style="background: url('blue.png') no-repeat center center/cover;">
+    <h2>Our Work</h2>
+    <div class="videos-container">
+        <div class="video-card">
+            <video width="100%" controls>
+                <source src="Video1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <p>Graphene Coating</p>
+        </div>
+        <div class="video-card">
+            <video width="100%" controls>
+                <source src="video2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <p>Car Customization</p>
+        </div>
+        <div class="video-card">
+            <video width="100%" controls>
+                <source src="video3.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <p>Glass Buffing and Coating</p>
+        </div>
+    </div>
+</section>
+
+<!-- Follow Us Section -->
+<section id="follow-us" class="scroll-section social media section" style="background: url('blue.png') no-repeat center center/cover;">
+    <h2>Follow Us</h2>
+    <div class="social-media-container">
+        <div class="social-media-item" id="contact">
+            <img src="Wataspp.png" alt="Contact" class="social-logo">
+            <p>Contact</p>
+        </div>
+        <div class="social-media-item" id="instagram">
+            <img src="Instagram.png" alt="Instagram" class="social-logo">
+            <p>Instagram</p>
+        </div>
+        <div class="social-media-item" id="facebook">
+            <img src="Facebook.png" alt="Facebook" class="social-logo">
+            <p>Facebook</p>
+        </div>
+    </div>
+</section>
+
     </main>
 
     <footer>
@@ -211,12 +189,20 @@
             alert("You have been logged out successfully!");
             window.location.href = "login.html";
         });
+        // JavaScript to handle click events and redirect to social media pages
+
+        document.getElementById("contact").onclick = function() {
+    // Redirect to WhatsApp with a pre-defined phone number
+    window.location.href = "https://wa.me/7666248738"; // Replace with your actual phone number
+};
+
+document.getElementById("instagram").onclick = function() {
+    window.location.href = "https://www.instagram.com/autogenics_detailing_studio?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="; // Redirect to Instagram
+};
+
+document.getElementById("facebook").onclick = function() {
+    window.location.href = "https://www.facebook.com/yourpage"; // Redirect to Facebook
+};
+
     </script>
-</body>
-</html>
-
-
-
-
-
 
